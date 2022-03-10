@@ -7,7 +7,9 @@ permalink: /fast
 A lot of sites recommend benchmarking with this outdated method:
 
 ```zsh
-for i in $(seq 10); do; /usr/bin/time zsh -lic exit; done
+for i in $(seq 10); do
+  /usr/bin/time zsh -lic exit
+done
 ```
 
 While Antidote should prove to run well using this method, there's a better way.

@@ -10,4 +10,4 @@ It is fast because it can do things concurrently, and generates an ultra-fast st
 plugin file that you can include in your Zsh config.
 
 It is written natively in Zsh, is well tested, and picks up where
-[Antibody](https://getantibody.github.io) left off.
+[Antibody](https://github.com/getantibody/antibody) left off.

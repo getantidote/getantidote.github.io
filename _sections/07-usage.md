@@ -8,7 +8,7 @@ Antidote achieves its speed by doing all the work of cloning plugins up front an
 generating the code your `.zshrc` needs to source those plugins. Typically, we want to
 do this via a plugins file.
 
-### Plugins file
+## Plugins file
 
 A plugins file is basically any text file that has one plugin per line.
 
@@ -45,7 +45,7 @@ zsh-users/zsh-autosuggestions
 
 Now that we have a plugins file, let's look how can we load them!
 
-### Loading plugins
+## Loading plugins
 
 If you followed the [recommended install procedure](#recommended-install), your plugins
 will be loaded via a statically generated plugins file. Basically, antidote will only
@@ -72,7 +72,7 @@ Finally, the static generated plugins file gets sourced in your `.zshrc`.
 source ${ZDOTDIR:-~}/.zsh_plugins.zsh
 ```
 
-### CleanMyMac or similar tools
+## CleanMyMac or similar tools
 
 If you use CleanMyMac or similar tools, make sure to set it up to ignore the `antidote
 home` folder, otherwise it may delete your plugins.
@@ -83,7 +83,7 @@ You may also change Antidote's home folder, for example:
 export ANTIDOTE_HOME=~/Libary/antidote
 ```
 
-### Home
+## Home
 
 You can also see where antidote is keeping the plugins with the `home` command:
 
