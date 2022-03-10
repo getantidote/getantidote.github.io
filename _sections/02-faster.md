@@ -4,7 +4,9 @@ layout: page
 permalink: /fast
 ---
 
-A lot of sites recommend benchmarking with this outdated method:
+Loading your plugins with Antidote is fast! It was designed with speed in mind.
+
+A lot of sites recommend benchmarking with this simple, but outdated, method:
 
 ```zsh
 for i in $(seq 10); do
@@ -12,8 +14,6 @@ for i in $(seq 10); do
 done
 ```
 
-While Antidote should prove to run well using this method, there's a better way.
-
-Nowadays [zsh-bench](https://github.com/romkatv/zsh-bench) is the best way out there to
-compare Zsh startup times. Have a look at [how Antidote compares to other setups
+However, [zsh-bench](https://github.com/romkatv/zsh-bench) provides a much better way to
+benchmark Zsh startup times. Have a look at [how Antidote compares to other setups
 here](https://github.com/romkatv/zsh-bench/blob/master/doc/linux-desktop.md).
