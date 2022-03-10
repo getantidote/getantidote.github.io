@@ -38,4 +38,10 @@ Serve jekyll
 bundle exec jekyll serve
 ```
 
-Theme: [godalming123/minimal](https://github.com/godalming123/minimal)
+## Syntax
+
+Syntax highlighting help [here](https://mcpride.github.io/posts/development/2018/03/06/syntax-highlighting-with-jekyll/)
+
+## Themes
+
+- [godalming123/minimal](https://github.com/godalming123/minimal)
