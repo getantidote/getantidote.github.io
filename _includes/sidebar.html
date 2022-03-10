@@ -1,0 +1,12 @@
+<div class="Menu">
+  <div class="item">
+    <a href="{{ site.url }}">Home</a>
+  </div>
+
+{% for section in site.sections %}
+<div class="item">
+  <a href="{{ section.url }}">{{ section.title }}</a>
+</div>
+{% endfor %}
+
+</div>
