@@ -16,6 +16,7 @@
   --fg: #868E96;
   --fg-dark: #212529;
   --grape: #5f3dc4;
+  --heart: #DE5F88;
 
   --selection-bg: var(--blue);
   --selection-fg: white;
@@ -59,11 +60,11 @@ h1 {
 }
 
 h2 {
-  color: #DE5F88;
+  color: var(--heart);
 }
 
 h3 {
-  color: #0251aa;
+  color: var(--grape);
 }
 
 h4 {
@@ -146,7 +147,11 @@ blockquote {
   margin: 0;
   padding: 0 1em;
   color: var(--fg-dark);
-  border-left: 0.25em solid var(--grape);
+  border-left: 0.25em solid var(--heart);
+}
+
+blockquote p {
+  font-style: italic;
 }
 
 /* li > code,

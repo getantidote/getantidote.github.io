@@ -4,7 +4,10 @@ layout: page
 permalink: /intro
 ---
 
-Antidote is a Zsh plugin manager made from the ground up thinking about performance.
+> Get the cure - Zsh plugin management made awesome
+
+[Antidote](https://github.com/mattmc3/antidote) is a Zsh plugin manager made from the
+ground up thinking about performance.
 
 It is fast because it can do things concurrently, and generates an ultra-fast static
 plugin file that you can include in your Zsh config.

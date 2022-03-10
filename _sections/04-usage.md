@@ -47,13 +47,12 @@ Now that we have a plugins file, let's look how can we load them!
 
 ## Loading plugins
 
-If you followed the [recommended install procedure](#recommended-install), your plugins
-will be loaded via a statically generated plugins file. Basically, antidote will only
-need to run when you change your `.zsh_plugins.txt` file, and then it will regenerate
-the static file.
+If you followed the recommended install procedure, your plugins will be loaded via a
+statically generated plugins file. Basically, antidote will only need to run when you
+change your `.zsh_plugins.txt` file, and then it will regenerate the static file.
 
 _Note that in this case, we will never want to call `antidote init`. **Be sure that's
-not in your `.zshrc`**. `antidote init` is a wrapper provided for backwards
+not in your ~/.zshrc**. `antidote init` is a wrapper provided for backwards
 compatibility with antibody and antigen users, but is no longer recommended._
 
 Assuming the `.zsh_plugins.txt` be created above, we can run:
@@ -81,27 +80,4 @@ You may also change Antidote's home folder, for example:
 
 ```zsh
 export ANTIDOTE_HOME=~/Libary/antidote
-```
-
-## Home
-
-You can also see where antidote is keeping the plugins with the `home` command:
-
-```zsh
-$ antidote home
-/Users/matt/Library/Caches/antidote
-```
-
-Of course, you can remove the entire thing with:
-
-```zsh
-rm -rf $(antidote home)
-```
-
-if you decide to start fresh or to use something else.
-
-If you clear out your plugins, don't forget to also run:
-
-```zsh
-rm ${ZDOTDIR:-~}/.zsh_plugins.zsh
 ```

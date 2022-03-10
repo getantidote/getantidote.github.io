@@ -96,7 +96,8 @@ source /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-
 ## Path
 
 You may specify a subfolder or a specific file if the repo you are bundling contains
-multiple plugins. This is especially useful for frameworks like [Oh-My-Zsh][ohmyzsh].
+multiple plugins. This is especially useful for frameworks like
+[Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh).
 
 File Example:
 
