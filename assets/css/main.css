@@ -58,6 +58,18 @@ h1 {
   font-size: 1.5rem;
 }
 
+h2 {
+  color: #DE5F88;
+}
+
+h3 {
+  color: #0251aa;
+}
+
+h4 {
+  color: #005eca;
+}
+
 h1 + p {
   font-size: 1.5rem;
   line-height: 1.6;

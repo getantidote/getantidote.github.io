@@ -11,7 +11,7 @@ a look!
 
 The `kind` annotation can be used to determine how a bundle should be treated.
 
-### zsh
+### kind:zsh
 
 The default is `kind:zsh`, which will look for files that match these globs:
 
@@ -30,7 +30,7 @@ fpath+=( /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.co
 source /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 ```
 
-### path
+### kind:path
 
 The `kind:path` mode will just put the plugin folder in your `$PATH`.
 
@@ -41,7 +41,7 @@ $ antidote bundle romkatv/zsh-bench kind:path
 export PATH="/Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-zsh-bench:$PATH"
 ```
 
-#### fpath
+### kind:fpath
 
 The `kind:fpath` only puts the plugin folder on the fpath, doing nothing else. It can be
 especially useful for completion scripts that aren't intended to be sourced directly, or
@@ -54,7 +54,7 @@ antidote bundle sindresorhus/pure kind:fpath
 fpath+=( /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-sindresorhus-SLASH-pure )
 ```
 
-#### clone
+### kind:clone
 
 The `kind:clone` only gets the plugin, doing nothing else. It can be useful for managing
 a package that isn't directly used as a shell plugin.
@@ -65,7 +65,7 @@ Example:
 $ antidote bundle mbadolato/iTerm2-Color-Schemes kind:clone
 ```
 
-#### defer
+### kind:defer
 
 The `kind:defer` option defers loading of a plugin. This can be useful for plugins you
 don't need available right away or are slow to load. [Use with caution][deferred-init].
@@ -122,9 +122,13 @@ You can also change how Antidote names the plugin directories by adding this to 
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 ```
 
-Now, the directories where plugins are stored is nicer to read:
+Now, the directories where plugins are stored is nicer to read. For example:
+
+`https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions`
+becomes `zsh-users__zsh-autosuggestions`.
 
 ```zsh
+$ antidote bundle zsh-users/zsh-autosuggestions
 fpath+=( /Users/matt/Library/Caches/antidote/zsh-users__zsh-autosuggestions )
 source /Users/matt/Library/Caches/antidote/zsh-users__zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 ```
