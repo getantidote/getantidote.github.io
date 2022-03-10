@@ -17,3 +17,7 @@ trim_trailing_whitespace = false
 [*.{htm,html}]
 indent_style = space
 indent_size = 2
+
+[*.{css,scss}]
+indent_style = space
+indent_size = 2
