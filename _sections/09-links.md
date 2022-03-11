@@ -4,13 +4,14 @@ layout: page
 permalink: /links
 ---
 
-- Follow progress on the [GitHub repository](https://github.com/mattmc3/antidote)
-- A huge thank you to [Carlos](https://twitter.com/caarlos0) for all his work on
-[antibody](https://github.com/getantibody/antibody) over the years.
+- Follow antidote progress on the [GitHub repository](https://github.com/mattmc3/antidote)
+- Antidote organization [https://github.com/getantidote](https://github.com/getantidote)
+- Website source [https://github.com/getantidote/getantidote.github.io](https://github.com/getantidote/getantidote.github.io)
 
 ## Attributions:
 
 - Site built with [Jekyll](https://jekyllrb.com) using
 [GitHub Pages](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll)
-- Site source [https://github.com/getantidote/getantidote.github.io](https://github.com/getantidote/getantidote.github.io)
 - Logo and favicon from [svgrepo.com](https://www.svgrepo.com/page/licensing)
+- A huge thank you to [Carlos](https://twitter.com/caarlos0) for all his work on
+[antibody](https://github.com/getantibody/antibody) over the years.
