@@ -4,8 +4,24 @@ layout: page
 permalink: /install
 ---
 
-To get the best performance and a seamless install of antidote, the recommended install
-method is to add the following snippet to your `.zshrc`:
+The simplest way to use antidote is to call the `antidote load` command from your
+`.zshrc`:
+
+```zsh
+# clone antidote if necessary
+[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
+
+# source antidote
+. ~/.antidote/antidote.zsh
+
+# generate and source plugins from ~/.zsh_plugins.txt
+antidote load
+```
+
+## Ultra high performance install
+
+To squeeze out every last drop of performance, you can do all the things
+`antidote load` does for you on your own. This snippet shows you how:
 
 ```zsh
 # clone antidote if necessary and generate a static plugin file
@@ -19,7 +35,14 @@ if [[ ! $zhome/.zsh_plugins.zsh -nt $zhome/.zsh_plugins.txt ]]; then
     antidote bundle <$zhome/.zsh_plugins.txt >$zhome/.zsh_plugins.zsh
   )
 fi
-autoload -Uz $zhome/.antidote/functions/antidote
+
+# uncomment if you want your session to have commands like `antidote update`
+# autoload -Uz $zhome/.antidote/functions/antidote
+
+# source static plugins file
 source $zhome/.zsh_plugins.zsh
 unset zhome
 ```
+
+This method boils down to only the essentials. However, note that you'll really only be
+saving small fractions of a second over using `antidote load` directly.
