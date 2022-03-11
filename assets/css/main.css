@@ -298,8 +298,9 @@ details > p {
 .Title .subtext {
   color: var(--fg-color-light);
   font-size: 0.8rem;
-  text-transform: uppercase;
-  display: none;
+  font-style: italic;
+  /* text-transform: uppercase;
+  display: none; */
 }
 
 .Title .text {
@@ -395,4 +396,16 @@ details > p {
 
 .Content table img {
   background-color: transparent;
+}
+
+div.logo-product {
+  display: inline-flex;
+  align-items: center;
+}
+
+div.less-than {
+  color: var(--heart);
+  margin-left: .7em;
+  margin-right: .7em;
+  font-size: 1.5rem;
 }

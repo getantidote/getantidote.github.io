@@ -14,6 +14,9 @@ for i in $(seq 10); do
 done
 ```
 
-However, [zsh-bench](https://github.com/romkatv/zsh-bench) provides a much better way to
-benchmark Zsh startup times. Have a look at [how Antidote compares to other setups
-here](https://github.com/romkatv/zsh-bench/blob/master/doc/linux-desktop.md).
+You can use that, however, [zsh-bench](https://github.com/romkatv/zsh-bench) provides a
+much better way to benchmark Zsh startup times. Have a look at [how Antidote compares to
+other setups here](https://github.com/romkatv/zsh-bench/blob/master/doc/linux-desktop.md).
+
+The antidote developer regularly publishes zsh-bench results in his
+[dotfiles repo](https://github.com/mattmc3/zdotdir).
