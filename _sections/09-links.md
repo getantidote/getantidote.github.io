@@ -12,4 +12,5 @@ permalink: /links
 
 - Site built with [Jekyll](https://jekyllrb.com) using
 [GitHub Pages](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll)
+- Site source [https://github.com/getantidote/getantidote.github.io](https://github.com/getantidote/getantidote.github.io)
 - Logo and favicon from [svgrepo.com](https://www.svgrepo.com/page/licensing)
