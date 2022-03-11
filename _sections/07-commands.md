@@ -6,56 +6,6 @@ permalink: /commands
 
 Let’s look what other commands antidote has available for us!
 
-## Update
-
-Antidote can update all bundles in a single pass.
-
-Just run:
-
-```zsh
-$ antidote update
-Updating all bundles in /Users/matt/Library/Caches/antidote...
-```
-
-and that’s it.
-
-## Purge
-
-You can remove a bundle completely by purging it:
-
-```zsh
-$ antidote purge ohmyzsh/ohmyzsh
-Removing ohmyzsh/ohmyzsh...
-```
-
-## List
-
-If you want to see what plugins you have in your home folder, you can of course list
-them:
-
-```zsh
-$ antidote list
-https://github.com/Tarrasch/zsh-bd            /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-Tarrasch-SLASH-zsh-bd
-https://github.com/caarlos0/git-add-remote    /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-caarlos0-SLASH-git-add-remote
-# ...
-```
-
-## Path
-
-You can see the path being used for a cloned bundle.
-
-```zsh
-$ antidote path ohmyzsh/ohmyzsh
-/Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh
-```
-
-This is particularly useful for projects like oh-my-zsh that rely on storing its path in
-the `$ZSH` environment variable:
-
-```zsh
-$ ZSH=$(antidote path ohmyzsh/ohmyzsh)
-```
-
 ## Home
 
 You can also see where antidote is keeping the plugins with the `home` command:
@@ -77,4 +27,74 @@ If you clear out your plugins, don't forget to also run:
 
 ```zsh
 rm ${ZDOTDIR:-~}/.zsh_plugins.zsh
+```
+
+## List
+
+If you want to see what plugins you have in your home folder, you can of course list
+them:
+
+```zsh
+$ antidote list
+https://github.com/zsh-users/zsh-autosuggestions                 /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions
+https://github.com/zsh-users/zsh-history-substring-search        /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-history-substring-search
+# ...
+```
+
+## Load
+
+The core command for loading your plugins file from your `.zshrc`. It takes a parameter
+for your plugins file, or defaults to `.zsh_plugins.txt` if no file provided:
+
+```zsh
+# .zshrc
+# make a static plugins file and source it to load all your plugins
+antidote load
+```
+
+With a specified plugins file:
+
+```zsh
+# .zshrc
+antidote load ${ZDOTDIR:~}/myplugins.conf
+```
+
+## Path
+
+You can see the path being used for a cloned bundle.
+
+```zsh
+$ antidote path ohmyzsh/ohmyzsh
+/Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh
+```
+
+This is particularly useful for projects like oh-my-zsh that rely on storing its path in
+the `$ZSH` environment variable:
+
+```zsh
+$ ZSH=$(antidote path ohmyzsh/ohmyzsh)
+```
+
+## Purge
+
+You can remove a bundle completely by purging it:
+
+```zsh
+$ antidote purge ohmyzsh/ohmyzsh
+Removing ohmyzsh/ohmyzsh...
+```
+
+## Update
+
+Antidote can update itself, and all bundles in a single pass.
+
+Just run:
+
+```zsh
+$ antidote update
+Updating antidote...
+Updating f6c4391..7b8d560
+...
+Updating all bundles in /Users/matt/Library/Caches/antidote...
+...
 ```
