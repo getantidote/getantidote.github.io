@@ -24,7 +24,7 @@ And `source` them.
 
 Example:
 
-```zsh
+```console
 $ antidote bundle zsh-users/zsh-autosuggestions kind:zsh
 fpath+=( /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions )
 source /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
@@ -36,7 +36,7 @@ The `kind:path` mode will just put the plugin folder in your `$PATH`.
 
 Example:
 
-```
+```console
 $ antidote bundle romkatv/zsh-bench kind:path
 export PATH="/Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-zsh-bench:$PATH"
 ```
@@ -49,8 +49,8 @@ for prompts that support `promptinit`.
 
 Example:
 
-```zsh
-antidote bundle sindresorhus/pure kind:fpath
+```console
+$ antidote bundle sindresorhus/pure kind:fpath
 fpath+=( /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-sindresorhus-SLASH-pure )
 ```
 
@@ -61,7 +61,7 @@ a package that isn't directly used as a shell plugin.
 
 Example:
 
-```zsh
+```console
 $ antidote bundle mbadolato/iTerm2-Color-Schemes kind:clone
 ```
 
@@ -72,7 +72,7 @@ don't need available right away or are slow to load. [Use with caution][deferred
 
 Example:
 
-```zsh
+```console
 $ antidote bundle olets/zsh-abbr kind:defer
 fpath+=( /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-zsh-defer )
 source /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-zsh-defer/zsh-defer.plugin.zsh
@@ -87,7 +87,7 @@ whatever reason.
 
 Example:
 
-```zsh
+```console
 $ antidote bundle zsh-users/zsh-autosuggestions branch:develop
 fpath+=( /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions )
 source /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
@@ -101,14 +101,14 @@ multiple plugins. This is especially useful for frameworks like
 
 File Example:
 
-```zsh
+```console
 $ antidote bundle ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 source /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/lib/clipboard.zsh
 ```
 
 Folder Example:
 
-```zsh
+```console
 $ antidote bundle ohmyzsh/ohmyzsh path:plugins/magic-enter
 fpath+=( /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/magic-enter )
 source /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/magic-enter/magic-enter.plugin.zsh
@@ -128,7 +128,7 @@ Now, the directories where plugins are stored is nicer to read. For example:
 `https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions`
 becomes `zsh-users__zsh-autosuggestions`.
 
-```zsh
+```console
 $ antidote bundle zsh-users/zsh-autosuggestions
 fpath+=( /Users/matt/Library/Caches/antidote/zsh-users__zsh-autosuggestions )
 source /Users/matt/Library/Caches/antidote/zsh-users__zsh-autosuggestions/zsh-autosuggestions.plugin.zsh

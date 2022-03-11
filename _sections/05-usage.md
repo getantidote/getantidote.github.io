@@ -12,7 +12,7 @@ do this via a plugins file.
 
 A plugins file is basically any text file that has one plugin per line.
 
-In our examples, let's assume we have a `${ZDOTDIR:-~}/.zsh_plugins.txt` file with these
+In our examples, let's assume we have a `~/.zsh_plugins.txt` file with these
 contents:
 
 ```zsh
@@ -58,7 +58,7 @@ compatibility with antibody and antigen users, but is no longer recommended._
 Assuming the `.zsh_plugins.txt` be created above, we can run:
 
 ```zsh
-antidote bundle <${ZDOTDIR:-~}/.zsh_plugins.txt >${ZDOTDIR:-~}/.zsh_plugins.zsh
+antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 ```
 
 We can run this at any time to update our `.zsh_plugins.zsh` file, however if you
@@ -68,7 +68,7 @@ Finally, the static generated plugins file gets sourced in your `.zshrc`.
 
 ```zsh
 # .zshrc
-source ${ZDOTDIR:-~}/.zsh_plugins.zsh
+source ~/.zsh_plugins.zsh
 ```
 
 ## CleanMyMac or similar tools

@@ -10,7 +10,7 @@ Let’s look what other commands antidote has available for us!
 
 You can also see where antidote is keeping the plugins with the `home` command:
 
-```zsh
+```console
 $ antidote home
 /Users/matt/Library/Caches/antidote
 ```
@@ -26,7 +26,7 @@ if you decide to start fresh or to use something else.
 If you clear out your plugins, don't forget to also run:
 
 ```zsh
-rm ${ZDOTDIR:-~}/.zsh_plugins.zsh
+rm ~/.zsh_plugins.zsh
 ```
 
 ## List
@@ -34,7 +34,7 @@ rm ${ZDOTDIR:-~}/.zsh_plugins.zsh
 If you want to see what plugins you have in your home folder, you can of course list
 them:
 
-```zsh
+```console
 $ antidote list
 https://github.com/zsh-users/zsh-autosuggestions                 /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions
 https://github.com/zsh-users/zsh-history-substring-search        /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-history-substring-search
@@ -56,14 +56,14 @@ With a specified plugins file:
 
 ```zsh
 # .zshrc
-antidote load ${ZDOTDIR:~}/myplugins.conf
+antidote load ${ZDOTDIR:-~}/myplugins.conf
 ```
 
 ## Path
 
 You can see the path being used for a cloned bundle.
 
-```zsh
+```console
 $ antidote path ohmyzsh/ohmyzsh
 /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh
 ```
@@ -79,7 +79,7 @@ $ ZSH=$(antidote path ohmyzsh/ohmyzsh)
 
 You can remove a bundle completely by purging it:
 
-```zsh
+```console
 $ antidote purge ohmyzsh/ohmyzsh
 Removing ohmyzsh/ohmyzsh...
 ```
@@ -90,7 +90,7 @@ Antidote can update itself, and all bundles in a single pass.
 
 Just run:
 
-```zsh
+```console
 $ antidote update
 Updating antidote...
 Updating f6c4391..7b8d560
