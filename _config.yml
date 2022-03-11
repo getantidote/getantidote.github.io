@@ -33,6 +33,7 @@ plugins:
 # Reading Files
 include:
   - _pages
+  - favicons
 
 collections:
   sections:
