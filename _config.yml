@@ -23,6 +23,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   The fast, native, Zsh plugin manager
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://getantidote.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+giturl: "https://github.com/mattmc3/antidote"
 github_username:  getantidote
 
 # Build settings
