@@ -8,7 +8,7 @@ Let’s look what other commands antidote has available for us!
 
 ## Home
 
-You can also see where antidote is keeping the plugins with the `home` command:
+You can see where antidote is keeping the plugins with the `home` command:
 
 ```console
 $ antidote home
@@ -49,8 +49,7 @@ Don't forget to reload zsh afterwards to load the plugin you just added!
 
 ## List
 
-If you want to see what plugins you have in your home folder, you can of course list
-them:
+You can list the plugins you have cloned to your antidote home folder:
 
 ```console
 $ antidote list
@@ -61,8 +60,8 @@ https://github.com/zsh-users/zsh-history-substring-search        /Users/matt/Lib
 
 ## Load
 
-The core command for loading your plugins file from your `.zshrc`. It takes a parameter
-for your plugins file, or defaults to `.zsh_plugins.txt` if no file provided:
+You can use `antidote load` in your `.zshrc` to clone and source everything in your
+plugins file, which by default is `${ZDOTDIR:-$HOME}/.zsh_plugins.txt`:
 
 ```zsh
 # .zshrc
@@ -70,7 +69,7 @@ for your plugins file, or defaults to `.zsh_plugins.txt` if no file provided:
 antidote load
 ```
 
-With a specified plugins file:
+It also takes a parameter if you prefer to use a custom plugins file:
 
 ```zsh
 # .zshrc
