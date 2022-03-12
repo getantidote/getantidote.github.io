@@ -20,8 +20,8 @@ antidote load
 
 ## Ultra high performance install
 
-To squeeze out every last drop of performance, you can do all the things
-`antidote load` does for you on your own. This snippet shows you how:
+To squeeze out every last drop of performance, you can do all the things `antidote load`
+does for you on your own. This is the `.zshrc` snippet you can use:
 
 ```zsh
 # clone antidote if necessary and generate a static plugin file
@@ -44,5 +44,5 @@ source $zhome/.zsh_plugins.zsh
 unset zhome
 ```
 
-This method boils down to only the essentials. However, note that you'll really only be
-saving small fractions of a second over using `antidote load` directly.
+This method boils down to only the bare essentials. However, note that you'll really
+only be saving small fractions of a second over using `antidote load` directly.
