@@ -51,16 +51,18 @@ If you followed the recommended install procedure, your plugins will already be 
 when you called `antidote load` in your `.zshrc`.
 
 However, you could choose generate your static plugins file manually with
-`antidote bundle`. Basically, antidote will only need to run when you
-change your `.zsh_plugins.txt` file, and then it will regenerate the static file.
+`antidote bundle`. Basically, antidote will only need to run when you change your
+`.zsh_plugins.txt` file. After you change this, use antidote to regenerate the static
+file.
 
 Assuming the `.zsh_plugins.txt` be created above, we can run:
 
 ```zsh
+# generate ~/.zsh_plugins.zsh
 antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 ```
 
-We can run this at any time to update our `.zsh_plugins.zsh` file, however if you
+We can run this at any time to update our static `.zsh_plugins.zsh` file, however if you
 followed the recommended install procedure you won't need to do this yourself.
 
 Finally, the static generated plugins file gets sourced in your `.zshrc`.
@@ -83,5 +85,5 @@ home` folder, otherwise it may delete your plugins.
 You may also change Antidote's home folder, for example:
 
 ```zsh
-export ANTIDOTE_HOME=~/Libary/antidote
+export ANTIDOTE_HOME=~/.cache/antidote
 ```
