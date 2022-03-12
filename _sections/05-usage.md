@@ -47,13 +47,12 @@ Now that we have a plugins file, let's look how can we load them!
 
 ## Loading plugins
 
-If you followed the recommended install procedure, your plugins will be loaded via a
-statically generated plugins file. Basically, antidote will only need to run when you
-change your `.zsh_plugins.txt` file, and then it will regenerate the static file.
+If you followed the recommended install procedure, your plugins will already be loaded
+when you called `antidote load` in your `.zshrc`.
 
-_Note that in this case, we will never want to call `antidote init`. **Be sure that's
-not in your ~/.zshrc**. `antidote init` is a wrapper provided for backwards
-compatibility with antibody and antigen users, but is no longer recommended._
+However, you could choose generate your static plugins file manually with
+`antidote bundle`. Basically, antidote will only need to run when you
+change your `.zsh_plugins.txt` file, and then it will regenerate the static file.
 
 Assuming the `.zsh_plugins.txt` be created above, we can run:
 
@@ -70,6 +69,11 @@ Finally, the static generated plugins file gets sourced in your `.zshrc`.
 # .zshrc
 source ~/.zsh_plugins.zsh
 ```
+
+_Note that to use `antidote bundle` this way, we will never want to call
+`antidote init`. **Be sure that's not in your ~/.zshrc**. `antidote init` is a wrapper
+provided for backwards compatibility for users familiar with antibody and antigen, but
+is no longer recommended._
 
 ## CleanMyMac or similar tools
 
