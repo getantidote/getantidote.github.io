@@ -29,6 +29,24 @@ If you clear out your plugins, don't forget to also run:
 rm ~/.zsh_plugins.zsh
 ```
 
+## Install
+
+You can quickly add a plugin to your plugins file with `antidote install`:
+
+```console
+$ antidote install zsh-users/zsh-autosuggestions
+Bundle 'zsh-users/zsh-autosuggestions' added to '/Users/matt/.zsh_plugins.txt'.
+```
+
+If you have an alternate location for your plugins file, you can provide that too:
+
+```console
+$ antidote install zsh-users/zsh-history-substring-search ${ZDOTDIR:-~}/myplugins.conf
+Bundle 'zsh-users/zsh-history-substring-search' added to '/Users/matt/.zsh/myplugins.conf'.
+```
+
+Don't forget to reload zsh afterwards to load the plugin you just added!
+
 ## List
 
 If you want to see what plugins you have in your home folder, you can of course list
