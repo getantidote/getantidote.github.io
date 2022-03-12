@@ -38,6 +38,13 @@ Serve jekyll
 bundle exec jekyll serve
 ```
 
+Serve jekyll with dev config
+
+```shell
+bundle exec jekyll serve -w --config _config.yml,_config-dev.yml
+```
+
+
 ## Syntax
 
 Syntax highlighting help [here](https://mcpride.github.io/posts/development/2018/03/06/syntax-highlighting-with-jekyll/)

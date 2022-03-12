@@ -26,6 +26,8 @@ url: "https://getantidote.github.io" # the base hostname & protocol for your sit
 giturl: "https://github.com/mattmc3/antidote"
 github_username:  getantidote
 
+environment: prod
+
 # Build settings
 plugins:
   - jekyll-feed
