@@ -28,3 +28,7 @@ The original [Antigen](https://github.com/zsh-users/antigen) plugin manager was 
 Other native Zsh plugin managers caught up on speed, so it was deprecated.
 But Antibody had some nice features that aren't in other Zsh plugin managers.
 So [Antidote](https://github.com/mattmc3/antidote) was created to carry on as the next generation of antigen-compatible Zsh plugin managers.
+
+See also:
+
+* [Migrating from antibody](migrating-from-antibody)
