@@ -4,7 +4,7 @@ layout: page
 permalink: /migrating-from-antibody
 ---
 
-If you are migrating from [Antibody](https://getantibody.github.io/) to Antidote, it might help you to know that Antidote is meant to be a drop-in replacement for Antibody. It was designed to work the same way with the same commands, but implemented as a pure Zsh superset of that functionality. That means simply that simply replacing the word `antibody` with `antidote` in your Zsh configuration should essentially work.
+If you are migrating from [Antibody](https://getantibody.github.io/) to Antidote, it might help you to know that Antidote is meant to be a drop-in replacement for Antibody. It was designed to work the same way with the same commands, but implemented as a pure Zsh superset of that functionality. That means that simply replacing the word `antibody` with `antidote` in your Zsh configuration should essentially work.
 
 ## Dynamic loading
 
