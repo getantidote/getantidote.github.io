@@ -8,7 +8,7 @@ If you are migrating from [Antibody](https://getantibody.github.io/) to Antidote
 
 ## Dynamic loading
 
-Antibody encouraged the concept of dynamically loading plugins. Antidote, on the other hand, encourages using the static loading method for speed. However, you can still use the legacy dynamic load mechanism if speed isn't your primary concern. With dynamic loading, every time the a new shell starts, antidote will apply the plugins given to it.
+Antibody encouraged the concept of dynamically loading plugins. Antidote, on the other hand, encourages using the static loading method for speed. However, you can still use the legacy dynamic load mechanism if speed isn't your primary concern. With dynamic loading, every time a new shell starts, antidote will apply the plugins given to it.
 
 For this to work, antidote needs to be wrapped into your `.zshrc`. To do that, run:
 
