@@ -8,6 +8,12 @@ permalink: /links
 - Antidote organization [https://github.com/getantidote](https://github.com/getantidote)
 - Website source [https://github.com/getantidote/getantidote.github.io](https://github.com/getantidote/getantidote.github.io)
 
+## Questions?
+
+- Migrating from antibody? [see here](migrating-from-antibody).
+- Having trouble with antidote? [see troubleshooting tips here](troubleshooting).
+- Want to file a bug report? [see GitHub issues here](https://github.com/mattmc3/antidote/issues).
+
 ## Attributions:
 
 - Site built with [Jekyll](https://jekyllrb.com) using
