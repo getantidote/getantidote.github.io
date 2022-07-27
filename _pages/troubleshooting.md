@@ -10,7 +10,7 @@ Feel free to suggest a new feature or file a bug report [here](https://github.co
 
 ## Common issues
 
-### no such file or directory
+### No such file or directory
 
 **Problem:** If you get a "no such file or directory" error, it may be because your `~/.zsh_plugins.zsh` static file is out of date. This can happen if you remove your antidote home with `rm -rf $(antidote home)` and need to re-download your plugins.
 
@@ -27,11 +27,11 @@ If that isn't working for you, you can run this command:
 antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 ```
 
-### completions
+### Completions
 
 Antidote is simply a plugin manager, not a complete Zsh framework. If you have used [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh) or [Prezto](https://github.com/sorin-ionescu/prezto) in the past, you might be used to a ton of out-of-the-box features like <kbd>TAB</kbd> completions. To get that with an antidote-based Zsh config, you'll need to set up completions yourself, or use a completions plugin.
 
-### configuring completions
+#### configuring completions
 
 If you want to manully enable Zsh completions, the following snippet needs to go towards the end of your `.zshrc`.
 
@@ -63,7 +63,7 @@ fi
 
 But, once you start to get too fancy, you're probably be better off using a plugin.
 
-### completions plugins
+#### completions plugins
 
 For a light-weight but full-featured completions plugin I recommend the [zephyr](https://github.com/mattmc3/zephyr) micro-framework. You can use everything zephyr offers, or just the completions portion by simply adding the following to your `.zsh_plugins.txt` file:
 
