@@ -8,7 +8,7 @@ permalink: /completions
 
 Antidote is a plugin manager, not a complete Zsh framework. If you have used [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh) or [Prezto](https://github.com/sorin-ionescu/prezto) in the past, you might be used to a ton of out-of-the-box features like <kbd>TAB</kbd> completions. To get that with an antidote-based Zsh config, you'll need to set up completions yourself, or use a completions plugin. The good news it that's easy to do!
 
-### configuring completions
+### Manually Configuring
 
 If you want to manully enable Zsh completions, add the following snippet to your `.zshrc` after you've loaded your plugins.
 
@@ -40,7 +40,7 @@ fi
 
 However, once you start to get too fancy you might be better off using a plugin to initialize your completions.
 
-### completions plugins
+### Using Plugins
 
 For a light-weight but full-featured completions plugin I recommend the [zephyr](https://github.com/mattmc3/zephyr) micro-framework. You can use everything zephyr offers, or just the [completions](https://github.com/mattmc3/zephyr/tree/main/plugins/completions) portion. To use zephyr, simply add the following to your `.zsh_plugins.txt` file:
 
@@ -62,6 +62,7 @@ Another option is to use the completion module from [Prezto](https://github.com/
 sorin-ionescu/prezto path:modules/completion
 ```
 
-Reference Issues:
+### Reference Issues:
+
 - [git completions don't work even though zsh-completions is enabled #23](https://github.com/mattmc3/antidote/issues/23)
 - [solving command not found: compdef #24](https://github.com/mattmc3/antidote/issues/24)
