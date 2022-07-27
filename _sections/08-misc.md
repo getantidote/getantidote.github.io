@@ -6,4 +6,4 @@ permalink: /misc
 
 ## Completions
 
-For information about enabling Zsh completion features when using antidote, see the [troubleshooting](troubleshooting) section.
+For information about enabling Zsh completion features when using antidote, see the [completions](completions) section.
