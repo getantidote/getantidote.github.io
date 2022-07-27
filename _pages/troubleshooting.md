@@ -26,3 +26,7 @@ If that isn't working for you, you can run this command:
 # re-generate ~/.zsh_plugins.zsh
 antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 ```
+
+## Completions don't work
+
+For information about enabling Zsh completion features when using antidote, see the [completions](completions) section.
