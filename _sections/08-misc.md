@@ -15,6 +15,7 @@ For information about enabling Zsh completion features when using antidote, see 
 ## Migrating from another plugin manager
 
 Migrating from antibody? [see here](migrating-from-antibody).
+Migrating from antigen? [see here](migrating-from-antigen).
 
 ## Troubleshooting
 

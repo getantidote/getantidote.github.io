@@ -31,3 +31,4 @@ So [Antidote](https://github.com/mattmc3/antidote) was created to carry on as th
 
 **See also:**
 * [Migrating from antibody](migrating-from-antibody)
+* [Migrating from antigen](migrating-from-antigen)
