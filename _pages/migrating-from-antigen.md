@@ -44,9 +44,9 @@ antidote bundle zsh-users/zsh-completions
 # but instead you can accomplish the same via annotations:
 
 # Bundle oh-my-zsh libs and plugins with the 'path:' annotation
-ohmyzsh/ohmyzsh path:lib/clipboard.zsh
-ohmyzsh/ohmyzsh path:plugins/git
-ohmyzsh/ohmyzsh path:plugins/extract
+antidote bundle ohmyzsh/ohmyzsh path:lib/clipboard.zsh
+antidote bundle ohmyzsh/ohmyzsh path:plugins/git
+antidote bundle ohmyzsh/ohmyzsh path:plugins/extract
 
 # OR - you might want to load bundles with a HEREDOC.
 antidote bundle <<EOBUNDLES
@@ -56,6 +56,17 @@ antidote bundle <<EOBUNDLES
     # Bundle with a git URL
     https://github.com/zsh-users/zsh-history-substring-search
 EOBUNDLES
+
+# Themes are treated just like any other plugin
+antidote bundle sindresorhus/pure
+
+# OR - perhaps you prefer oh-my-zsh themes
+antidote bundle ohmyzsh/ohmyzsh path:lib/theme-and-appearance.zsh
+antidote bundle ohmyzsh/ohmyzsh path:themes/robbyrussell.zsh-theme
+
+# OR - third party OMZ compatible themes
+antidote bundle ohmyzsh/ohmyzsh path:lib/theme-and-appearance.zsh
+antidote bundle dracula/zsh
 
 # No need to run something like `antigen apply`.
 # antidote has no equivalent because your plugins are
