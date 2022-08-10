@@ -40,16 +40,16 @@ antidote bundle zsh-users/zsh-autosuggestions
 # Bundle extra zsh completions too.
 antidote bundle zsh-users/zsh-completions
 
+# Antidote doesn't have the 'use' command like antigen,
+# but instead you can accomplish the same via annotations:
+
+# Bundle oh-my-zsh libs and plugins with the 'path:' annotation
+ohmyzsh/ohmyzsh path:lib/clipboard.zsh
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/extract
+
 # OR - you might load bundles with a HEREDOC.
 antidote bundle <<EOBUNDLES
-    # Antidote doesn't have the 'use' command like antigen,
-    # but instead you can accomplish the same via annotations:
-
-    # Bundle oh-my-zsh libs and plugins with the 'path:' annotation
-    ohmyzsh/ohmyzsh path:lib/clipboard.zsh
-    ohmyzsh/ohmyzsh path:plugins/git
-    ohmyzsh/ohmyzsh path:plugins/extract
-
     # Bundle syntax-highlighting
     zsh-users/zsh-syntax-highlighting
 
