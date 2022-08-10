@@ -61,11 +61,12 @@ EOBUNDLES
 antidote bundle sindresorhus/pure
 
 # OR - perhaps you prefer oh-my-zsh themes
+antidote bundle ohmyzsh/ohmyzsh path:lib/git.zsh
 antidote bundle ohmyzsh/ohmyzsh path:lib/theme-and-appearance.zsh
 antidote bundle ohmyzsh/ohmyzsh path:themes/robbyrussell.zsh-theme
 
 # OR - third party OMZ compatible themes
-antidote bundle ohmyzsh/ohmyzsh path:lib/theme-and-appearance.zsh
+# (be sure to load any necessary omz libs first)
 antidote bundle dracula/zsh
 
 # No need to run something like `antigen apply`.
