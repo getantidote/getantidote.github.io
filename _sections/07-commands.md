@@ -101,6 +101,13 @@ $ antidote purge ohmyzsh/ohmyzsh
 Removing ohmyzsh/ohmyzsh...
 ```
 
+You can also remove all antidote bundles and the static cache file to start fresh:
+
+```console
+$ rm -rf $(antidote home)
+$ rm ${ZDOTDIR:-~}/.zsh_plugins.zsh
+```
+
 ## Update
 
 Antidote can update itself, and all bundles in a single pass.
