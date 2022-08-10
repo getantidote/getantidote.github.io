@@ -4,7 +4,7 @@ layout: page
 permalink: /migrating-from-antigen
 ---
 
-If you are migrating from [Antigen](https://github.com/zsh-users/antigen) to Antidote, there are some key differences. Simply replacing the word `antigen` with `antidote` in your Zsh configuration won't work the way it would migrating from with `antibody`. But, it's not too much work to migrate.
+If you are migrating from [antigen](https://github.com/zsh-users/antigen) to antidote, there are some key differences. Simply replacing the word `antigen` with `antidote` in your Zsh configuration won't work the way it would migrating from with `antibody`. But, it's not too much work to migrate.
 
 ## Dynamic loading
 
