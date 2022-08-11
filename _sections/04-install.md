@@ -4,6 +4,8 @@ layout: page
 permalink: /install
 ---
 
+## Cloning
+
 You can install the latest release of antidote by cloning it with `git`:
 
 ```zsh
