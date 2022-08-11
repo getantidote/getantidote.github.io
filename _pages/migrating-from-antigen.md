@@ -53,6 +53,9 @@ antidote bundle <<EOBUNDLES
     # Bundle syntax-highlighting
     zsh-users/zsh-syntax-highlighting
 
+    # Bundle OMZ plugins using annotations
+    ohmyzsh/ohmyzsh path:plugins/magic-enter
+
     # Bundle with a git URL
     https://github.com/zsh-users/zsh-history-substring-search
 EOBUNDLES
