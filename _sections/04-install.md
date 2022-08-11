@@ -11,6 +11,8 @@ You can install the latest release of antidote by cloning it with `git`:
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 ```
 
+## .zshrc
+
 After installation, the simplest way to use antidote is to call the `antidote load` command from your `.zshrc`:
 
 ```zsh
