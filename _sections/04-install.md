@@ -4,45 +4,57 @@ layout: page
 permalink: /install
 ---
 
-The simplest way to use antidote is to call the `antidote load` command from your
-`.zshrc`:
+You can install the latest release of antidote by cloning it with `git`:
 
 ```zsh
-# clone antidote if necessary
-[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
+# first, run this from an interactive zsh terminal session:
+git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+```
+
+After installation, the simplest way to use antidote is to call the `antidote load` command from your `.zshrc`:
+
+```zsh
+# now, simply add these two lines in your ~/.zshrc
 
 # source antidote
-. ~/.antidote/antidote.zsh
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 
-# generate and source plugins from ~/.zsh_plugins.txt
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
 ```
 
 ## Ultra high performance install
 
-To squeeze out every last drop of performance, you can do all the things `antidote load`
-does for you on your own. This is the `.zshrc` snippet you can use:
+If you want to squeeze every last drop of performance out of your antidote config, you can do all the things `antidote load` does for you on your own. If you're fairly comfortable with zsh, this is a more robust `.zshrc` snippet you can use:
 
 ```zsh
-# clone antidote if necessary and generate a static plugin file
-zhome=${ZDOTDIR:-$HOME}
-if [[ ! $zhome/.zsh_plugins.zsh -nt $zhome/.zsh_plugins.txt ]]; then
-  [[ -e $zhome/.antidote ]] \
-    || git clone --depth=1 https://github.com/mattmc3/antidote.git $zhome/.antidote
-  [[ -e $zhome/.zsh_plugins.txt ]] || touch $zhome/.zsh_plugins.txt
+# ~/.zshrc
+
+# You can change the names/locations of these if you prefer.
+antidote_dir=${ZDOTDIR:-~}/.antidote
+plugins_txt=${ZDOTDIR:-~}/.zsh_plugins.txt
+static_file=${ZDOTDIR:-~}/.zsh_plugins.zsh
+
+# Clone antidote if necessary and generate a static plugin file.
+if [[ ! $static_file -nt $plugins_txt ]]; then
+  [[ -e $antidote_dir ]] ||
+    git clone --depth=1 https://github.com/mattmc3/antidote.git $antidote_dir
   (
-    source $zhome/.antidote/antidote.zsh
-    antidote bundle <$zhome/.zsh_plugins.txt >$zhome/.zsh_plugins.zsh
+    source $antidote_dir/antidote.zsh
+    [[ -e $plugins_txt ]] || touch $plugins_txt
+    antidote bundle <$plugins_txt >$static_file
   )
 fi
 
-# uncomment if you want your session to have commands like `antidote update`
-# autoload -Uz $zhome/.antidote/functions/antidote
+# Uncomment this if you want antidote commands like `antidote update` available
+# in your interactive shell session:
+# autoload -Uz $antidote_dir/functions/antidote
 
-# source static plugins file
-source $zhome/.zsh_plugins.zsh
-unset zhome
+# source the static plugins file
+source $static_file
+
+# cleanup
+unset antidote_dir plugins_file static_file
 ```
 
-This method boils down to only the bare essentials. However, note that you'll really
-only be saving small fractions of a second over using `antidote load` directly.
+This method boils down to only the bare essentials and only runs antidote if absolutely necessary. However, note that you'll really only be saving small fractions of a second over simply using `antidote load` directly.
