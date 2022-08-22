@@ -26,7 +26,7 @@ zsh-users/zsh-completions
 # empty lines are skipped
 
 # annotations are also allowed:
-ohmyzsh/ohmyzsh   path:lib/clipboard.zsh
+ohmyzsh/ohmyzsh   path:lib
 ohmyzsh/ohmyzsh   path:plugins/colored-man-pages
 romkatv/zsh-bench kind:path
 olets/zsh-abbr    kind:defer
