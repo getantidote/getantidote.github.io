@@ -19,17 +19,26 @@ contents:
 # .zsh_plugins.txt
 
 # comments are supported like this
-zshzoo/zfunctions
-zshzoo/zshrc.d
+rupa/z
 zsh-users/zsh-completions
 
 # empty lines are skipped
 
 # annotations are also allowed:
-ohmyzsh/ohmyzsh   path:lib
-ohmyzsh/ohmyzsh   path:plugins/colored-man-pages
 romkatv/zsh-bench kind:path
 olets/zsh-abbr    kind:defer
+
+# frameworks like oh-my-zsh are supported
+ohmyzsh/ohmyzsh path:lib
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+ohmyzsh/ohmyzsh path:plugins/magic-enter
+
+# or lighter-weight ones like zsh-utils
+belak/zsh-utils path:editor
+belak/zsh-utils path:history
+belak/zsh-utils path:prompt
+belak/zsh-utils path:utility
+belak/zsh-utils path:completion
 
 # prompts:
 #   with prompt plugins, remember to add this to your .zshrc:
@@ -37,10 +46,11 @@ olets/zsh-abbr    kind:defer
 sindresorhus/pure     kind:fpath
 romkatv/powerlevel10k kind:fpath
 
-# other plugins
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-history-substring-search
+# popular fish-like plugins
+mattmc3/zfunctions
 zsh-users/zsh-autosuggestions
+zdharma-continuum/fast-syntax-highlighting kind:defer
+zsh-users/zsh-history-substring-search
 ```
 
 Now that we have a plugins file, let's look how can we load them!
