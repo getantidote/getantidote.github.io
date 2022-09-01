@@ -42,7 +42,7 @@ However, once you start to get too fancy you might be better off using a plugin 
 
 ### Using Plugins
 
-For a light-weight but full-featured completions plugin I recommend the [zephyr](https://github.com/mattmc3/zephyr) micro-framework. You can use everything zephyr offers, or just the [completions](https://github.com/mattmc3/zephyr/tree/main/plugins/completions) portion. To use zephyr, simply add the following to your `.zsh_plugins.txt` file:
+For a light-weight but full-featured completions plugin I recommend the [zsh-utils](https://github.com/belak/zsh-utils) micro-framework. You can use everything zsh-utils offers, or just the [completion](https://github.com/belak/zsh-utils/tree/main/completion) portion. To use zsh-utils, simply add the following to your `.zsh_plugins.txt` file:
 
 ```zsh
 # .zsh_plugins.txt
@@ -51,7 +51,7 @@ For a light-weight but full-featured completions plugin I recommend the [zephyr]
 zsh-users/zsh-completions
 
 # now, configure and run compinit to initialize completions
-mattmc3/zephyr path:plugins/completions
+belak/zsh-utils path:completion
 ```
 
 Another option is to use the completion module from [Prezto](https://github.com/sorin-ionescu/prezto/tree/master/modules/completion):
