@@ -4,7 +4,7 @@ layout: page
 permalink: /install
 ---
 
-## Cloning
+## Install with git
 
 You can install the latest release of antidote by cloning it with `git`:
 
@@ -12,6 +12,11 @@ You can install the latest release of antidote by cloning it with `git`:
 # first, run this from an interactive zsh terminal session:
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 ```
+
+## Install with a plugin manager
+
+- [homebrew](https://formulae.brew.sh/formula/antidote): `brew install antidote`
+- [Arch AUR](https://aur.archlinux.org/packages/zsh-antidote): `yay -S antidote`
 
 ## .zshrc
 
