@@ -65,7 +65,7 @@ fi
 source $static_file
 
 # cleanup
-unset antidote_dir plugins_file static_file
+unset antidote_dir plugins_txt static_file
 ```
 
 This method boils down to only the bare essentials and only runs antidote if absolutely necessary. However, note that you'll really only be saving small fractions of a second over simply using `antidote load` directly.
