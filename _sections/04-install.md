@@ -47,24 +47,26 @@ If you want to squeeze every last drop of performance out of your antidote confi
 ```zsh
 # ~/.zshrc
 
-# Edit your .zsh_plugins.txt file to store your plugin list.
-zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.txt
-[[ -f $zsh_plugins ]] || touch $zsh_plugins
+# Set the name of the static file antidote will generate.
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.zsh
 
-# Generate a static plugin file if .zsh_plugins.txt has been updated.
-if [[ ! ${zsh_plugins:r}.zsh -nt $zsh_plugins ]]; then
+# Ensure you have a .zsh_plugins.txt file where you can add plugins.
+[[ -f ${zsh_plugins:r}.txt ]] || touch ${zsh_plugins:r}.txt
+
+# Generate the static plugin file if .zsh_plugins.txt has been updated.
+if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]]; then
   (
     source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-    antidote bundle <$zsh_plugins >${zsh_plugins:r}.zsh
+    antidote bundle <${zsh_plugins:r}.txt >$zsh_plugins
   )
 fi
 
-# Uncomment these lines if you want to make the antidote command available:
+# Uncomment this if you want to make the antidote command available:
 # fpath+=(${ZDOTDIR:-~}/.antidote)
 # autoload -Uz antidote
 
 # Source your static plugins file.
-source ${zsh_plugins:r}.zsh
+source $zsh_plugins
 ```
 
 This method boils down to only the bare essentials and only runs antidote if absolutely necessary. However, note that you'll really only be saving small fractions of a second over calling the much simpler `antidote load` command directly.
