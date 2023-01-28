@@ -22,7 +22,7 @@ antidote may also be available in your system's package manager:
 
 ## .zshrc
 
-After installation, the simplest way to use antidote is to call the `antidote load` command from your `.zshrc`:
+After installation, the recommended way to use antidote is to call the `antidote load` command from your `.zshrc`:
 
 ```zsh
 # now, simply add these two lines in your ~/.zshrc
@@ -34,6 +34,12 @@ source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 ```
 
+**Note:** If you installed antidote with a package manager, the path will be different
+than `${ZDOTDIR:-~}/.antidote`. For example, if you are using homebrew on macOS, the
+command you will need will be:
+`source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh`.
+Be sure to follow the instructions provided by your package manager.
+
 ## Ultra high performance install
 
 If you want to squeeze every last drop of performance out of your antidote config, you can do all the things `antidote load` does for you on your own. If you're fairly comfortable with zsh, this is a more robust `.zshrc` snippet you can use:
@@ -41,31 +47,24 @@ If you want to squeeze every last drop of performance out of your antidote confi
 ```zsh
 # ~/.zshrc
 
-# You can change the names/locations of these if you prefer.
-antidote_dir=${ZDOTDIR:-~}/.antidote
-plugins_txt=${ZDOTDIR:-~}/.zsh_plugins.txt
-static_file=${ZDOTDIR:-~}/.zsh_plugins.zsh
+# Edit your .zsh_plugins.txt file to store your plugin list.
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.txt
+[[ -f $zsh_plugins ]] || touch $zsh_plugins
 
-# Clone antidote if necessary and generate a static plugin file.
-if [[ ! $static_file -nt $plugins_txt ]]; then
-  [[ -e $antidote_dir ]] ||
-    git clone --depth=1 https://github.com/mattmc3/antidote.git $antidote_dir
+# Generate a static plugin file if .zsh_plugins.txt has been updated.
+if [[ ! ${zsh_plugins:r}.zsh -nt $zsh_plugins ]]; then
   (
-    source $antidote_dir/antidote.zsh
-    [[ -e $plugins_txt ]] || touch $plugins_txt
-    antidote bundle <$plugins_txt >$static_file
+    source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+    antidote bundle <$zsh_plugins >${zsh_plugins:r}.zsh
   )
 fi
 
-# Uncomment this if you want antidote commands like `antidote update` available
-# in your interactive shell session:
-# autoload -Uz $antidote_dir/functions/antidote
+# Uncomment these lines if you want to make the antidote command available:
+# fpath+=(${ZDOTDIR:-~}/.antidote)
+# autoload -Uz antidote
 
-# source the static plugins file
-source $static_file
-
-# cleanup
-unset antidote_dir plugins_txt static_file
+# Source your static plugins file.
+source ${zsh_plugins:r}.zsh
 ```
 
-This method boils down to only the bare essentials and only runs antidote if absolutely necessary. However, note that you'll really only be saving small fractions of a second over simply using `antidote load` directly.
+This method boils down to only the bare essentials and only runs antidote if absolutely necessary. However, note that you'll really only be saving small fractions of a second over calling the much simpler `antidote load` command directly.
