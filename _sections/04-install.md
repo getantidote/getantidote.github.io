@@ -35,7 +35,7 @@ antidote load
 ```
 
 **Note:** If you installed antidote with a package manager, the path will be different
-than `${ZDOTDIR:-~}/.antidote`. For example, if you are using homebrew on macOS, the
+than `${ZDOTDIR:-~}/.antidote` so you will need to modify the above script with `source /path/to/antidote.zsh`. For example, if you are using homebrew on macOS, the
 command you will need will be:
 `source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh`.
 Be sure to follow the instructions provided by your package manager.
@@ -47,26 +47,23 @@ If you want to squeeze every last drop of performance out of your antidote confi
 ```zsh
 # ~/.zshrc
 
-# Set the name of the static file antidote will generate.
+# Set the name of the static .zsh plugins file antidote will generate.
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.zsh
 
 # Ensure you have a .zsh_plugins.txt file where you can add plugins.
 [[ -f ${zsh_plugins:r}.txt ]] || touch ${zsh_plugins:r}.txt
 
-# Generate the static plugin file if .zsh_plugins.txt has been updated.
-if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]]; then
-  (
-    source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-    antidote bundle <${zsh_plugins:r}.txt >$zsh_plugins
-  )
-fi
+# Lazy-load antidote.
+fpath+=(${ZDOTDIR:-~}/.antidote)
+autoload -Uz $fpath[-1]/antidote
 
-# Uncomment this if you want to make the antidote command available:
-# fpath+=(${ZDOTDIR:-~}/.antidote)
-# autoload -Uz antidote
+# Generate static file in a subshell when .zsh_plugins.txt is updated.
+if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]]; then
+  (antidote bundle <${zsh_plugins:r}.txt >|$zsh_plugins)
+fi
 
 # Source your static plugins file.
 source $zsh_plugins
 ```
 
-This method boils down to only the bare essentials and only runs antidote if absolutely necessary. However, note that you'll really only be saving small fractions of a second over calling the much simpler `antidote load` command directly.
+This method boils down to the bare essentials and will run `antidote bundle` only if absolutely necessary. However, note that you'll really only be saving small fractions of a second over calling the much simpler `antidote load` command directly.
