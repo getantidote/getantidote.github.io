@@ -7,13 +7,13 @@ permalink: /history
 <div class="logo-product">
   <img alt="antigen logo" height="15" src="/assets/img/antigen_logo.png">
   antigen
-  <div class="angle-mark">❯</div>
+  <div class="angle-mark">❯❯</div>
 </div>
 
 <div class="logo-product">
   <img alt="antibody logo" height="15" src="/assets/img/antibody_logo.png">
   antibody
-  <div class="angle-mark">❯</div>
+  <div class="angle-mark">❯❯</div>
 </div>
 
 <div class="logo-product">
