@@ -28,7 +28,7 @@ After installation, the recommended way to use antidote is to call the `antidote
 # now, simply add these two lines in your ~/.zshrc
 
 # source antidote
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+source /path/to/antidote/antidote.zsh
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
@@ -45,21 +45,21 @@ Be sure to follow the instructions provided by your package manager.
 If you want to squeeze every last drop of performance out of your antidote config, you can do all the things `antidote load` does for you on your own. If you're fairly comfortable with zsh, this is a more robust `.zshrc` snippet you can use:
 
 ```zsh
-# ~/.zshrc
+# ${ZDOTDIR:-~}/.zshrc
 
-# Set the name of the static .zsh plugins file antidote will generate.
-zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.zsh
+# Set the root name of the plugins files (.txt and .zsh) antidote will use.
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 
-# Ensure you have a .zsh_plugins.txt file where you can add plugins.
-[[ -f ${zsh_plugins:r}.txt ]] || touch ${zsh_plugins:r}.txt
+# Ensure the .zsh_plugins.txt file exists so you can add plugins.
+[[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
 
 # Lazy-load antidote from its functions directory.
 fpath=(/path/to/antidote/functions $fpath)
 autoload -Uz antidote
 
-# Generate static file in a subshell when .zsh_plugins.txt is updated.
-if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]]; then
-  (antidote bundle <${zsh_plugins:r}.txt >|$zsh_plugins)
+# Generate a new static file whenever .zsh_plugins.txt is updated.
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  antidote bundle <${zsh_plugins}.txt >|${zsh_plugins}.zsh
 fi
 
 # Source your static plugins file.
