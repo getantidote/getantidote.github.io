@@ -63,7 +63,7 @@ if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
 fi
 
 # Source your static plugins file.
-source $zsh_plugins
+source ${zsh_plugins}.zsh
 ```
 
 This method boils down to the bare essentials and will run `antidote bundle` only if absolutely necessary. However, note that you'll really only be saving small fractions of a second over calling the much simpler `antidote load` command directly.
