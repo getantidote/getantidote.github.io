@@ -66,3 +66,4 @@ sorin-ionescu/prezto path:modules/completion
 
 - [git completions don't work even though zsh-completions is enabled #23](https://github.com/mattmc3/antidote/issues/23)
 - [solving command not found: compdef #24](https://github.com/mattmc3/antidote/issues/24)
+- [Local completion not working for asdf](https://github.com/mattmc3/antidote/issues/182)
