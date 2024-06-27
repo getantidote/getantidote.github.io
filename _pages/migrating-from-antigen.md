@@ -44,6 +44,7 @@ antidote bundle zsh-users/zsh-completions
 # but instead you can accomplish the same via annotations:
 
 # Bundle oh-my-zsh libs and plugins with the 'path:' annotation
+antidote bundle getantidote/use-omz
 antidote bundle ohmyzsh/ohmyzsh path:lib
 antidote bundle ohmyzsh/ohmyzsh path:plugins/git
 antidote bundle ohmyzsh/ohmyzsh path:plugins/extract

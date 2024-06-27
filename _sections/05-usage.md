@@ -29,8 +29,9 @@ romkatv/zsh-bench kind:path
 olets/zsh-abbr    kind:defer
 
 # frameworks like oh-my-zsh are supported
-ohmyzsh/ohmyzsh path:lib
-ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+getantidote/use-omz        # handle OMZ dependencies
+ohmyzsh/ohmyzsh path:lib   # load OMZ's library
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages  # load OMZ plugins
 ohmyzsh/ohmyzsh path:plugins/magic-enter
 
 # or lighter-weight ones like zsh-utils
