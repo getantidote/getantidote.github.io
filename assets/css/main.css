@@ -95,7 +95,7 @@ p strong {
 
 li a,
 p a {
-  color: var(--fg-dark);
+  color: var(--blue);
   font-weight: 400;
   padding-bottom: 3px;
   border-bottom: 1px dotted #ddd;
@@ -103,7 +103,7 @@ p a {
 
 li a:hover,
 p a:hover {
-  color: var(--blue);
+  color: var(--grape);
   border-bottom: none;
 }
 
