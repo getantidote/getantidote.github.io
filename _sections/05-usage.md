@@ -39,7 +39,6 @@ belak/zsh-utils path:editor
 belak/zsh-utils path:history
 belak/zsh-utils path:prompt
 belak/zsh-utils path:utility
-belak/zsh-utils path:completion
 
 # prompts:
 #   with prompt plugins, remember to add this to your .zshrc:
