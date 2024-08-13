@@ -16,17 +16,23 @@ In our examples, let's assume we have a `~/.zsh_plugins.txt` file with these
 contents:
 
 ```zsh
-# .zsh_plugins.txt
+# .zsh_plugins.txt - comments begin with "#"
 
-# comments are supported like this
+# Basic Zsh plugins are defined in user/repo format
+jeffreytse/zsh-vi-mode
+
+# Bash plugins may also work
 rupa/z
-zsh-users/zsh-completions
 
 # empty lines are skipped
 
 # annotations are also allowed:
 romkatv/zsh-bench kind:path
 olets/zsh-abbr    kind:defer
+
+# set up Zsh completions with plugins
+mattmc3/ez-compinit
+zsh-users/zsh-completions kind:fpath path:src
 
 # frameworks like oh-my-zsh are supported
 getantidote/use-omz        # handle OMZ dependencies
