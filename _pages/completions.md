@@ -41,10 +41,10 @@ zsh-users/zsh-completions
 ```
 
 Alternatively, for a light-weight but full-featured completions plugin you could also
-use the [zsh-utils](https://github.com/belak/zsh-utils) micro-framework. You can use
-everything zsh-utils offers, or just the
-[completion](https://github.com/belak/zsh-utils/tree/main/completion) portion. To use
-zsh-utils, simply add the following to your `.zsh_plugins.txt` file:
+use the [Zephyr](https://github.com/mattmc3/zephyr) micro-framework. You can use
+everything Zephyr offers, or just the
+[completion](https://github.com/mattmc3/zephyr/tree/main/plugins/completion) portion. To use
+Zephyr, simply add the following to your `.zsh_plugins.txt` file:
 
 ```zsh
 # .zsh_plugins.txt
@@ -53,11 +53,11 @@ zsh-utils, simply add the following to your `.zsh_plugins.txt` file:
 zsh-users/zsh-completions kind:fpath path:src
 
 # run towards the BOTTOM of your .zsh_plugins.txt after fpath is populated
-belak/zsh-utils path:completion
+mattmc3/zephyr path:plugins/completion
 ```
 
 ### Reference Issues:
 
-- [git completions don't work even though zsh-completions is enabled #23](https://github.com/mattmc3/antidote/issues/23)
-- [solving command not found: compdef #24](https://github.com/mattmc3/antidote/issues/24)
-- [Local completion not working for asdf](https://github.com/mattmc3/antidote/issues/182)
+-   [git completions don't work even though zsh-completions is enabled #23](https://github.com/mattmc3/antidote/issues/23)
+-   [solving command not found: compdef #24](https://github.com/mattmc3/antidote/issues/24)
+-   [Local completion not working for asdf](https://github.com/mattmc3/antidote/issues/182)

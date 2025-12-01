@@ -40,11 +40,11 @@ ohmyzsh/ohmyzsh path:lib   # load OMZ's library
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages  # load OMZ plugins
 ohmyzsh/ohmyzsh path:plugins/magic-enter
 
-# or lighter-weight ones like zsh-utils
-belak/zsh-utils path:editor
-belak/zsh-utils path:history
-belak/zsh-utils path:prompt
-belak/zsh-utils path:utility
+# or lighter-weight ones like Zephyr
+mattmc3/zephyr path:plugins/editor
+mattmc3/zephyr path:plugins/history
+mattmc3/zephyr path:plugins/prompt
+mattmc3/zephyr path:plugins/utility
 
 # prompts:
 #   with prompt plugins, remember to add this to your .zshrc:
