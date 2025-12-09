@@ -84,7 +84,7 @@ zsh-defer source /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-g
 
 ## Branch
 
-You can also specify a branch to download, if you don't want the `main` branch for
+You can also specify a branch to download, if you don't want the default branch for
 whatever reason.
 
 Example:
@@ -114,6 +114,26 @@ Folder Example:
 $ antidote bundle ohmyzsh/ohmyzsh path:plugins/magic-enter
 fpath+=( /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/magic-enter )
 source /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/magic-enter/magic-enter.plugin.zsh
+```
+
+## Pre/Post
+
+You may specify a function that runs before/after loading the plugin. They can
+be used to configure the plugin.
+
+Example:
+
+```console
+$ antidote bundle zsh-users/zsh-autosuggestions post:adjust_autosuggestions_style
+```
+
+with `adjust_autosuggestions_style` being a function defined before `antidote
+load` is called:
+
+```console
+function adjust_autosuggestions_style () {
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+}
 ```
 
 ## Friendly Names
