@@ -116,9 +116,19 @@ Just run:
 
 ```console
 $ antidote update
-Updating antidote...
-Updating f6c4391..7b8d560
+Updating bundles...
+antidote: checking for updates: mattmc3/antidote
+antidote: checking for updates: zsh-users/zsh-autosuggestions
+antidote: checking for updates: zsh-users/zsh-completions
+antidote: checking for updates: zsh-users/zsh-history-substring-search
 ...
-Updating all bundles in $HOME/.cache/antidote...
+Waiting for bundle updates to complete...
+
+Bundle mattmc3/antidote update check complete.
+antidote: updated: mattmc3/antidote 22c72eb -> a8271f8
+a8271f8 Merge pull request #260 from mattmc3/v2.0.10
+22c72eb Update changelog
+
+Bundle updates complete.
 ...
 ```
