@@ -4,8 +4,7 @@ layout: page
 permalink: /options
 ---
 
-There are a few options you can use that should cover most common use cases. Let's take
-a look!
+These annotations cover most common setups. Let's take a look.
 
 ## Kind
 
@@ -99,7 +98,7 @@ builtin autoload -Uz $fpath[-1]/*(N.:t)
 ## Branch
 
 You can also specify a branch to download, if you don't want the default (`main`)
-branch for whatever reason.
+branch.
 
 Example:
 

@@ -66,4 +66,31 @@ fi
 source ${zsh_plugins}.zsh
 ```
 
-This method boils down to the bare essentials and will run `antidote bundle` only if absolutely necessary. However, note that you'll really only be saving small fractions of a second over calling the much simpler `antidote load` command directly.
+This is the minimal version. It only runs `antidote bundle` when needed.
+However, the speedup over `antidote load` is tiny and usually not worth it for
+most configs.
+
+## Uninstall
+
+If you want to clean up antidote-managed artifacts, run the commands below from
+an interactive zsh session as needed.
+
+```zsh
+# to remove snapshots:
+rm -rf -- $(antidote snapshot home)
+
+# to remove the bundle file and the generated static file:
+rm -- ${ZDOTDIR:-$HOME}/.zsh_plugins.{txt,zsh}(N)
+
+# to remove cloned bundles:
+rm -rf -- $(antidote home)
+```
+
+How you remove antidote itself depends on how it was installed. Either use your
+system package manager's uninstall/remove command, or remove its install
+directory if installed manually:
+
+```zsh
+# manual install removal:
+rm -rf /path/to/antidote
+```
