@@ -33,7 +33,7 @@
   :root {
     color-scheme: dark;
 
-    --bg: #0f1419;
+    --bg: #1a2026;
     --fg: #9aa4af;
     --fg-dark: #e5edf5;
     --light-gray: #131a21;
@@ -72,7 +72,7 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --bg: #0f1419;
+  --bg: #1a2026;
   --fg: #9aa4af;
   --fg-dark: #e5edf5;
   --light-gray: #131a21;
