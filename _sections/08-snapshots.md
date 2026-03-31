@@ -5,12 +5,12 @@ permalink: /snapshots
 ---
 
 `antidote snapshot` manages point-in-time snapshots of your cloned bundles.
-A snapshot is simply a bundle file where each repository plugin is annotated with
+A snapshot is a bundle file where each repository is annotated with
 `kind:clone pin:<SHA>`.
 
 ## Synopsis
 
-Get detailed help with:
+Show snapshot help:
 
 ```console
 $ antidote snapshot --help
@@ -18,45 +18,16 @@ $ antidote snapshot --help
 
 ## Commands
 
-`home`
-: Print the path to the snapshot directory.
-
-`list`
-: List available snapshot files.
-
-`save`
-: Save a snapshot of currently cloned bundles. If no file is given, antidote
-  creates a timestamped file in the snapshot directory.
-
-`restore`
-: Restore bundles from a snapshot. If no file is given, antidote restores the
-  most recent snapshot.
-
-`remove`
-: Remove snapshot files. If no file is given and `fzf` is available, antidote
-  shows an interactive multi-select picker.
-
-## Where snapshots are stored
-
-By default, snapshots are automatically saved to `$XDG_DATA_HOME/antidote/snapshots`
-(or `~/Library/Application Support/antidote/snapshots` on macOS).
-
-Use this command to print your current snapshot directory:
+Use `home` to print the snapshot directory. By default this is
+`$XDG_DATA_HOME/antidote/snapshots` (or
+`~/Library/Application Support/antidote/snapshots` on macOS):
 
 ```console
 $ antidote snapshot home
 $XDG_DATA_HOME/antidote/snapshots
 ```
 
-## Examples
-
-Manually save a snapshot:
-
-```console
-$ antidote snapshot save
-```
-
-List snapshots:
+Use `list` to show available snapshot files:
 
 ```console
 $ antidote snapshot list
@@ -65,17 +36,35 @@ snapshot-20260328-091015.txt
 # ...
 ```
 
-Restore from the most recent snapshot:
+Use `save` to create a snapshot of currently cloned bundles. If no file is
+given, antidote creates a timestamped file in the snapshot directory. You can
+also pass a custom file path:
+
+```console
+$ antidote snapshot save
+$ antidote snapshot save /tmp/my-snapshot.txt
+```
+
+Use `restore` to restore bundles from a snapshot. If no file is given and
+`fzf` is available, antidote will use that as an interactive picker:
 
 ```console
 $ antidote snapshot restore
-```
-
-Restore a specific snapshot:
-
-```console
 $ antidote snapshot restore ~/.local/share/antidote/snapshots/snapshot-20260101-120000.txt
 ```
+
+Use `remove` to delete one or more snapshot files. If no file is given and
+`fzf` is available, antidote will use that as an interactive picker:
+
+```console
+$ antidote snapshot remove ~/.local/share/antidote/snapshots/snapshot-20260101-120000.txt
+$ antidote snapshot remove ~/.local/share/antidote/snapshots/snapshot-20260101-120000.txt ~/.local/share/antidote/snapshots/snapshot-20260102-080000.txt
+$ antidote snapshot remove
+```
+
+To make configs reproducible across machines, save a snapshot on one machine,
+commit or copy that snapshot file, then run `antidote snapshot restore <file>`
+on the other machine.
 
 ## Configuration
 
@@ -97,5 +86,5 @@ Disable automatic snapshots:
 zstyle ':antidote:snapshot:automatic' enabled no
 ```
 
-Snapshots are saved automatically during `antidote update` in static mode.
+In static mode, snapshots are saved automatically during `antidote update`.
 They are not created in dynamic mode.
