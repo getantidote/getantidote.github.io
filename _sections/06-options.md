@@ -25,8 +25,8 @@ Example:
 
 ```zsh
 $ antidote bundle zsh-users/zsh-autosuggestions kind:zsh
-fpath+=( "$HOME/.cache/repos/github.com/zsh-users/zsh-autosuggestions" )
-source "$HOME/.cache/repos/github.com/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+fpath+=( "$HOME/.cache/antidote/github.com/zsh-users/zsh-autosuggestions" )
+source "$HOME/.cache/antidote/github.com/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 ```
 
 ### kind:path
@@ -37,7 +37,7 @@ Example:
 
 ```console
 $ antidote bundle romkatv/zsh-bench kind:path
-export PATH="$HOME/.cache/repos/github.com/romkatv/zsh-bench:$PATH"
+export PATH="$HOME/.cache/antidote/github.com/romkatv/zsh-bench:$PATH"
 ```
 
 ### kind:fpath
@@ -50,7 +50,7 @@ Example:
 
 ```console
 $ antidote bundle sindresorhus/pure kind:fpath
-fpath+=( "$HOME/.cache/repos/github.com/sindresorhus/pure" )
+fpath+=( "$HOME/.cache/antidote/github.com/sindresorhus/pure" )
 ```
 
 ### kind:clone
@@ -74,11 +74,11 @@ Example:
 ```zsh
 $ antidote bundle olets/zsh-abbr kind:defer
 if ! (( $+functions[zsh-defer] )); then
-  fpath+=( "$HOME/.cache/repos/github.com/romkatv/zsh-defer" )
-  source "$HOME/.cache/repos/github.com/romkatv/zsh-defer/zsh-defer.plugin.zsh"
+  fpath+=( "$HOME/.cache/antidote/github.com/romkatv/zsh-defer" )
+  source "$HOME/.cache/antidote/github.com/romkatv/zsh-defer/zsh-defer.plugin.zsh"
 fi
-fpath+=( "$HOME/.cache/repos/github.com/olets/zsh-abbr" )
-zsh-defer source "$HOME/.cache/repos/github.com/olets/zsh-abbr/zsh-abbr.plugin.zsh"
+fpath+=( "$HOME/.cache/antidote/github.com/olets/zsh-abbr" )
+zsh-defer source "$HOME/.cache/antidote/github.com/olets/zsh-abbr/zsh-abbr.plugin.zsh"
 ```
 
 ### kind:autoload
@@ -91,7 +91,7 @@ Example:
 
 ```console
 $ antidote bundle sorin-ionescu/prezto path:modules/utility/functions kind:autoload
-fpath+=( "$HOME/.cache/repos/github.com/sorin-ionescu/prezto/modules/utility/functions" )
+fpath+=( "$HOME/.cache/antidote/github.com/sorin-ionescu/prezto/modules/utility/functions" )
 builtin autoload -Uz $fpath[-1]/*(N.:t)
 ```
 
@@ -104,8 +104,8 @@ Example:
 
 ```console
 $ antidote bundle zsh-users/zsh-autosuggestions branch:develop
-fpath+=( "$HOME/.cache/repos/github.com/zsh-users/zsh-autosuggestions" )
-source "$HOME/.cache/repos/github.com/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+fpath+=( "$HOME/.cache/antidote/github.com/zsh-users/zsh-autosuggestions" )
+source "$HOME/.cache/antidote/github.com/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 ```
 
 ## Path
@@ -118,15 +118,15 @@ File Example:
 
 ```console
 $ antidote bundle ohmyzsh/ohmyzsh path:lib/clipboard.zsh
-source "$HOME/.cache/repos/github.com/ohmyzsh/ohmyzsh/lib/clipboard.zsh"
+source "$HOME/.cache/antidote/github.com/ohmyzsh/ohmyzsh/lib/clipboard.zsh"
 ```
 
 Folder Example:
 
 ```console
 $ antidote bundle ohmyzsh/ohmyzsh path:plugins/magic-enter
-fpath+=( "$HOME/.cache/repos/github.com/ohmyzsh/ohmyzsh/plugins/magic-enter" )
-source "$HOME/.cache/repos/github.com/ohmyzsh/ohmyzsh/plugins/magic-enter/magic-enter.plugin.zsh"
+fpath+=( "$HOME/.cache/antidote/github.com/ohmyzsh/ohmyzsh/plugins/magic-enter" )
+source "$HOME/.cache/antidote/github.com/ohmyzsh/ohmyzsh/plugins/magic-enter/magic-enter.plugin.zsh"
 ```
 
 ## Pin
@@ -201,5 +201,5 @@ You can configure how antidote names its cloned bundle directories with `path-st
 ```zsh
 zstyle ':antidote:bundle' path-style full     # github.com/owner/repo (default)
 zstyle ':antidote:bundle' path-style short    # owner/repo
-zstyle ':antidote:bundle' path-style escaped  # https-COLON--SLASH--SLASH-github.com-SLASH-owner-SLASH-repo (antibody style)
+zstyle ':antidote:bundle' path-style escaped  # URL-escaped path style (antibody style)
 ```

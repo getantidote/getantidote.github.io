@@ -12,7 +12,7 @@ You can see where antidote is keeping the plugins with the `home` command:
 
 ```console
 $ antidote home
-/Users/matt/Library/Caches/antidote
+$HOME/.cache/antidote
 ```
 
 Of course, you can remove the entire thing with:
@@ -35,14 +35,14 @@ You can quickly add a plugin to your plugins file with `antidote install`:
 
 ```console
 $ antidote install zsh-users/zsh-autosuggestions
-Bundle 'zsh-users/zsh-autosuggestions' added to '/Users/matt/.zsh_plugins.txt'.
+Bundle 'zsh-users/zsh-autosuggestions' added to '$HOME/.zsh_plugins.txt'.
 ```
 
 If you have an alternate location for your plugins file, you can provide that too:
 
 ```console
 $ antidote install zsh-users/zsh-history-substring-search ${ZDOTDIR:-~}/myplugins.conf
-Bundle 'zsh-users/zsh-history-substring-search' added to '/Users/matt/.zsh/myplugins.conf'.
+Bundle 'zsh-users/zsh-history-substring-search' added to '$HOME/.zsh/myplugins.conf'.
 ```
 
 Don't forget to reload zsh afterwards to load the plugin you just added!
@@ -53,8 +53,8 @@ You can list the plugins you have cloned to your antidote home folder:
 
 ```console
 $ antidote list
-https://github.com/zsh-users/zsh-autosuggestions                 /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions
-https://github.com/zsh-users/zsh-history-substring-search        /Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-history-substring-search
+https://github.com/zsh-users/zsh-autosuggestions                 $HOME/.cache/antidote/github.com/zsh-users/zsh-autosuggestions
+https://github.com/zsh-users/zsh-history-substring-search        $HOME/.cache/antidote/github.com/zsh-users/zsh-history-substring-search
 # ...
 ```
 
@@ -82,7 +82,7 @@ You can see the path being used for a cloned bundle.
 
 ```console
 $ antidote path ohmyzsh/ohmyzsh
-/Users/matt/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh
+$HOME/.cache/antidote/github.com/ohmyzsh/ohmyzsh
 ```
 
 This is particularly useful for projects like oh-my-zsh that rely on storing its path in
@@ -119,6 +119,6 @@ $ antidote update
 Updating antidote...
 Updating f6c4391..7b8d560
 ...
-Updating all bundles in /Users/matt/Library/Caches/antidote...
+Updating all bundles in $HOME/.cache/antidote...
 ...
 ```
