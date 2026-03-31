@@ -1,10 +1,15 @@
 # getantidote.github.io
 
+## antidote
+
+The antidote site is here: <https://antidote.sh>
+and here <https://getantidote.github.io>
+
+## Jekyll
+
 Start here:
 
 [Creating a GitHub Pages site with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll)
-
-## Jekyll
 
 Initialize site
 
