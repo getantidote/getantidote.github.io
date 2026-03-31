@@ -41,7 +41,7 @@ Bundle 'zsh-users/zsh-autosuggestions' added to '$HOME/.zsh_plugins.txt'.
 If you have an alternate location for your plugins file, you can provide that too:
 
 ```console
-$ antidote install zsh-users/zsh-history-substring-search ${ZDOTDIR:-~}/myplugins.conf
+$ antidote install zsh-users/zsh-history-substring-search ${ZDOTDIR:-$HOME}/myplugins.conf
 Bundle 'zsh-users/zsh-history-substring-search' added to '$HOME/.zsh/myplugins.conf'.
 ```
 
@@ -73,7 +73,7 @@ It also takes a parameter if you prefer to use a custom plugins file:
 
 ```zsh
 # .zshrc
-antidote load ${ZDOTDIR:-~}/myplugins.conf
+antidote load ${ZDOTDIR:-$HOME}/myplugins.conf
 ```
 
 ## Path
@@ -105,7 +105,7 @@ You can also remove all antidote bundles and the static cache file to start fres
 
 ```console
 $ rm -rf $(antidote home)
-$ rm ${ZDOTDIR:-~}/.zsh_plugins.zsh
+$ rm ${ZDOTDIR:-$HOME}/.zsh_plugins.zsh
 ```
 
 ## Update

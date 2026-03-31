@@ -24,11 +24,11 @@ Here's an example antidote config similar to what you might have already with an
 # ~/.zshrc
 
 # Clone antidote if necessary.
-[[ -e ${ZDOTDIR:-~}/.antidote ]] ||
-  git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+[[ -e ${ZDOTDIR:-$HOME}/.antidote ]] ||
+  git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
 
 # Source antidote.
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
 
 # Initialize antidote's dynamic mode, which changes `antidote bundle`
 # from static mode.

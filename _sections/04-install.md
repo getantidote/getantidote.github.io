@@ -10,7 +10,7 @@ You can install the latest release of antidote by cloning it with `git`:
 
 ```zsh
 # first, run this from an interactive zsh terminal session:
-git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
 ```
 
 ## Install with a package manager
@@ -30,12 +30,12 @@ After installation, the recommended way to use antidote is to call the `antidote
 # source antidote
 source /path/to/antidote/antidote.zsh
 
-# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+# initialize plugins statically with ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
 antidote load
 ```
 
 **Note:** If you installed antidote with a package manager, the path will be different
-than `${ZDOTDIR:-~}/.antidote` so you will need to modify the above script with `source /path/to/antidote.zsh`. For example, if you are using homebrew on macOS, the
+than `${ZDOTDIR:-$HOME}/.antidote` so you will need to modify the above script with `source /path/to/antidote.zsh`. For example, if you are using homebrew on macOS, the
 command you will need will be:
 `source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh`.
 Be sure to follow the instructions provided by your package manager.
@@ -45,10 +45,10 @@ Be sure to follow the instructions provided by your package manager.
 If you want to squeeze every last drop of performance out of your antidote config, you can do all the things `antidote load` does for you on your own. If you're fairly comfortable with zsh, this is a more robust `.zshrc` snippet you can use:
 
 ```zsh
-# ${ZDOTDIR:-~}/.zshrc
+# ${ZDOTDIR:-$HOME}/.zshrc
 
 # Set the root name of the plugins files (.txt and .zsh) antidote will use.
-zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
+zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
 
 # Ensure the .zsh_plugins.txt file exists so you can add plugins.
 [[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
