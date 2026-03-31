@@ -108,6 +108,11 @@ $ rm -rf $(antidote home)
 $ rm ${ZDOTDIR:-$HOME}/.zsh_plugins.zsh
 ```
 
+## Snapshot
+
+Snapshot commands are covered in detail in the
+[Snapshots](snapshots) section.
+
 ## Update
 
 Antidote can update itself, and all bundles in a single pass.
