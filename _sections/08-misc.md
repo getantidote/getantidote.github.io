@@ -8,11 +8,17 @@ permalink: /misc
 
 If you want to see a full-featured example Zsh configuration using antidote, you can have a look at the [zdotdir](https://github.com/getantidote/zdotdir) project. Feel free to incorporate code or plugins from it into your own dotfiles, or you can fork it to get started building your own Zsh config from scratch driven by antidote.
 
-## Using with Popular Zsh Frameworks
+## Using antidote with Zsh Frameworks
 
-Antidote is designed in such a way that it's easy to use subplugins contained within frameworks like [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh) and [Prezto](https://github.com/sorin-ionescu/prezto).
+Antidote is designed in such a way that it's easy to use subplugins contained
+within frameworks like [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh),
+[Prezto](https://github.com/sorin-ionescu/prezto), and
+[Zephyr](https://github.com/mattmc3/zephyr).
 
-For more information about using antidote with Oh-My-Zsh, see the [Using OMZ](using-omz) section. For Prezto, see the [Using Prezto](using-prezto) section.
+For more information about using antidote with Oh-My-Zsh, see the
+[Using OMZ](using-zsh-frameworks#omz) section. For Prezto, see the
+[Using Prezto](using-zsh-frameworks#prezto) section. For Zephyr, see
+[Using Zephyr](using-zsh-frameworks#zephyr).
 
 ## Completions
 
