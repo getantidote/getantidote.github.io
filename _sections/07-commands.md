@@ -53,8 +53,8 @@ You can list the plugins you have cloned to your antidote home folder:
 
 ```console
 $ antidote list
-https://github.com/zsh-users/zsh-autosuggestions                 $HOME/.cache/antidote/github.com/zsh-users/zsh-autosuggestions
-https://github.com/zsh-users/zsh-history-substring-search        $HOME/.cache/antidote/github.com/zsh-users/zsh-history-substring-search
+$HOME/.cache/antidote/github.com/zsh-users/zsh-autosuggestions           https://github.com/zsh-users/zsh-autosuggestions
+$HOME/.cache/antidote/github.com/zsh-users/zsh-history-substring-search  https://github.com/zsh-users/zsh-history-substring-search
 # ...
 ```
 
