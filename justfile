@@ -26,3 +26,13 @@ bundle-install:
 # Run jekyll locally with dev config.
 serve:
   PATH="{{ruby_prefix}}:$PATH" bundle _{{bundler_version}}_ exec jekyll serve -w --config _config.yml,_config-dev.yml --livereload
+
+# Stop local jekyll/livereload listeners (ports 4000 and 35729).
+stop:
+  pids=($(lsof -tiTCP:4000 -sTCP:LISTEN -a -u "$USER" 2>/dev/null) $(lsof -tiTCP:35729 -sTCP:LISTEN -a -u "$USER" 2>/dev/null)); \
+  if (( ${#pids[@]} == 0 )); then \
+    echo "No jekyll/livereload listeners found on 4000/35729."; \
+  else \
+    echo "Stopping PIDs: ${pids[*]}"; \
+    kill ${pids[@]}; \
+  fi
