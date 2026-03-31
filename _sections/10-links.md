@@ -7,7 +7,7 @@ permalink: /links
 ## Development:
 
 - Follow antidote progress on the [GitHub repository](https://github.com/mattmc3/antidote)
-- Want to a feature or need to file a bug report? [see GitHub issues here](https://github.com/mattmc3/antidote/issues)
+- Want to request a feature or need to file a bug report? [see GitHub issues here](https://github.com/mattmc3/antidote/issues)
 - Antidote organization [https://github.com/getantidote](https://github.com/getantidote)
 - Website source [https://github.com/getantidote/getantidote.github.io](https://github.com/getantidote/getantidote.github.io)
 
