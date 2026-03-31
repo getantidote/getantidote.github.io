@@ -20,6 +20,72 @@
 
   --selection-bg: var(--blue);
   --selection-fg: white;
+
+  --code-bg: rgba(27, 31, 35, 0.05);
+  --code-border: #DEE2E6;
+  --table-border: #dfe2e5;
+  --table-row-border: #c6cbd1;
+  --table-row-bg: #fff;
+  --table-row-alt-bg: #f6f8fa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --bg: #0f1419;
+    --fg: #9aa4af;
+    --fg-dark: #e5edf5;
+    --light-gray: #131a21;
+
+    --selection-bg: #2f81f7;
+    --selection-fg: #fff;
+
+    --code-bg: rgba(240, 246, 252, 0.1);
+    --code-border: #37414b;
+    --table-border: #2a333d;
+    --table-row-border: #37414b;
+    --table-row-bg: #131a21;
+    --table-row-alt-bg: #18212b;
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #fff;
+  --fg: #868E96;
+  --fg-dark: #212529;
+  --light-gray: #fafafa;
+
+  --selection-bg: var(--blue);
+  --selection-fg: white;
+
+  --code-bg: rgba(27, 31, 35, 0.05);
+  --code-border: #DEE2E6;
+  --table-border: #dfe2e5;
+  --table-row-border: #c6cbd1;
+  --table-row-bg: #fff;
+  --table-row-alt-bg: #f6f8fa;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0f1419;
+  --fg: #9aa4af;
+  --fg-dark: #e5edf5;
+  --light-gray: #131a21;
+
+  --selection-bg: #2f81f7;
+  --selection-fg: #fff;
+
+  --code-bg: rgba(240, 246, 252, 0.1);
+  --code-border: #37414b;
+  --table-border: #2a333d;
+  --table-row-border: #37414b;
+  --table-row-bg: #131a21;
+  --table-row-alt-bg: #18212b;
 }
 
 * {
@@ -158,10 +224,10 @@ blockquote p {
 p > code,
 td > code { */
 code.language-plaintext {
-  background-color: rgba(27, 31, 35, 0.05);
+  background-color: var(--code-bg);
   border-radius: 3px;
   box-sizing: border-box;
-  border: 1px solid #DEE2E6;
+  border: 1px solid var(--code-border);
   font-size: 85%;
   line-height: 1.5;
   font-weight: 300;
@@ -203,6 +269,84 @@ details > p {
   justify-content: center;
   align-items: center;
   height: var(--header-height);
+}
+
+.Theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  color: var(--fg-dark);
+  font-size: 0.8rem;
+  letter-spacing: 0.02rem;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.Theme-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  opacity: 0.45;
+  transition: opacity 200ms ease, color 200ms ease;
+}
+
+.Theme-icon--sun {
+  color: #d18f00;
+  font-size: 1.2rem;
+}
+
+.Theme-icon--moon {
+  color: var(--grape);
+}
+
+.Theme-toggle-pill {
+  width: 52px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--table-row-border);
+  background: var(--table-row-alt-bg);
+  padding: 3px;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.Theme-toggle-knob {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--table-row-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transform: translateX(0);
+  transition: transform 250ms var(--ease), background-color 200ms ease, border-color 200ms ease;
+}
+
+.Theme-toggle[aria-checked="true"] .Theme-toggle-knob {
+  transform: translateX(22px);
+}
+
+.Theme-toggle[aria-checked="false"] .Theme-icon--sun {
+  opacity: 1;
+}
+
+.Theme-toggle[aria-checked="true"] .Theme-icon--moon {
+  opacity: 1;
+}
+
+:root:not([data-theme]) .Theme-toggle[aria-checked="true"] .Theme-toggle-knob {
+  transform: translateX(22px);
+}
+
+.Theme-toggle:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 999px;
 }
 
 .Sidebar {
@@ -365,6 +509,11 @@ details > p {
   .Content {
     width: 100%;
   }
+
+  .Theme-toggle {
+    top: 10px;
+    right: 12px;
+  }
 }
 
 
@@ -382,16 +531,16 @@ details > p {
 
 .Content table th,.Content table td {
   padding: 6px 13px;
-  border: 1px solid #dfe2e5;
+  border: 1px solid var(--table-border);
 }
 
 .Content table tr {
-  background-color: #fff;
-  border-top: 1px solid #c6cbd1;
+  background-color: var(--table-row-bg);
+  border-top: 1px solid var(--table-row-border);
 }
 
 .Content table tr:nth-child(2n) {
-  background-color: #f6f8fa;
+  background-color: var(--table-row-alt-bg);
 }
 
 .Content table img {

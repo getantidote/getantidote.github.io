@@ -18,5 +18,68 @@
           {% include content.html %}
         </div>
       </div>
+      <button id="theme-toggle" class="Theme-toggle" type="button" role="switch" aria-label="Toggle light and dark mode" aria-checked="false">
+        <span class="Theme-icon Theme-icon--sun" aria-hidden="true">💡</span>
+        <span class="Theme-toggle-pill" aria-hidden="true">
+          <span class="Theme-toggle-knob"></span>
+        </span>
+        <span class="Theme-icon Theme-icon--moon" aria-hidden="true">☾</span>
+      </button>
+      <script>
+        (function () {
+          var root = document.documentElement;
+          var storageKey = "theme";
+          var button = document.getElementById("theme-toggle");
+
+          function systemPrefersDark() {
+            return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          }
+
+          function activeTheme() {
+            return root.getAttribute("data-theme") || (systemPrefersDark() ? "dark" : "light");
+          }
+
+          function updateButtonLabel() {
+            if (!button) {
+              return;
+            }
+
+            var theme = activeTheme();
+            var next = theme === "dark" ? "light" : "dark";
+            button.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
+            button.setAttribute("title", "Switch to " + next + " mode");
+          }
+
+          function applyTheme(theme) {
+            root.setAttribute("data-theme", theme);
+            updateButtonLabel();
+          }
+
+          var storedTheme = localStorage.getItem(storageKey);
+          if (storedTheme === "dark" || storedTheme === "light") {
+            applyTheme(storedTheme);
+          } else {
+            updateButtonLabel();
+          }
+
+          if (window.matchMedia) {
+            var mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+            mediaQuery.addEventListener("change", function () {
+              if (!localStorage.getItem(storageKey)) {
+                updateButtonLabel();
+              }
+            });
+          }
+
+          if (button) {
+            button.addEventListener("click", function () {
+              var current = activeTheme();
+              var next = current === "dark" ? "light" : "dark";
+              localStorage.setItem(storageKey, next);
+              applyTheme(next);
+            });
+          }
+        })();
+      </script>
 </body>
 </html>
